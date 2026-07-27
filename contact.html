@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Our Estimating Team | DC Earthworks & Groundworks</title>
+    <meta name="description" content="Get a custom quote for earthmoving, excavation, or groundworks. Contact our estimating team, find our office locations, or view our FAQs.">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'var(--color-bg)',
+                            bgDark: 'var(--color-bg-dark)',
+                            card: 'var(--color-card)',
+                            cardAccent: 'var(--color-card-accent)',
+                            border: 'var(--color-border)',
+                            accent: 'var(--color-accent)',
+                            accentLight: 'var(--color-accent-light)',
+                            accentDark: 'var(--color-accent-dark)',
+                            textPrimary: 'var(--color-text-primary)',
+                            textSecondary: 'var(--color-text-secondary)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-bg: #0E0F11;
+            --color-bg-dark: #0B0C0E;
+            --color-card: #16181B;
+            --color-card-accent: #23262B;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-accent: #D99C00;
+            --color-accent-light: #F5B50A;
+            --color-accent-dark: #B07E00;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #8E919A;
+        }
+        
+        .theme-light {
+            --color-bg: #F8FAFC;
+            --color-bg-dark: #F1F5F9;
+            --color-card: #FFFFFF;
+            --color-card-accent: #E2E8F0;
+            --color-border: rgba(15, 23, 42, 0.08);
+            --color-accent: #854D0E;
+            --color-accent-light: #A16207;
+            --color-accent-dark: #713F12;
+            --color-text-primary: #0F172A;
+            --color-text-secondary: #475569;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            transition: max-height 1s cubic-bezier(1, 0, 1, 0);
+        }
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- FLOATING STYLE SWITCHER -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button id="theme-toggle-btn" class="flex items-center space-x-2 bg-brand-card/90 backdrop-blur-md border border-brand-border px-4 py-3.5 rounded-full shadow-2xl text-xs font-semibold uppercase tracking-wider text-brand-textPrimary hover:border-brand-accent transition-all duration-300 group">
+            <i class="fa-solid fa-paint-roller text-brand-accent transform group-hover:rotate-12 transition-transform duration-300"></i>
+            <span>Switch Design Style</span>
+        </button>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="theme-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 bg-brand-card border border-brand-border px-5 py-3.5 rounded-xl shadow-2xl text-xs font-medium text-brand-textPrimary transition-all duration-500 flex items-center space-x-3">
+        <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+        <span id="toast-message">Style changed successfully.</span>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="bg-brand-bgDark border-b border-brand-border py-2 px-4 text-xs text-brand-textSecondary hidden lg:block transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-phone text-brand-accent mr-2"></i> +44 (0) 161 555 0192</span>
+                <span><i class="fa-solid fa-envelope text-brand-accent mr-2"></i> info@dcearthworks.co.uk</span>
+                <span><i class="fa-solid fa-location-dot text-brand-accent mr-2"></i> Manchester & London Depots</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CHAS Premium</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">FORS Gold</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CPA Member</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CITB Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / STICKY NAVIGATION -->
+    <header id="sticky-header" class="sticky top-0 z-40 transition-all duration-300 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                        <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-brand-textPrimary block leading-none transition-colors duration-300">DC</span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html#process" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Process
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#projects" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent rounded-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Right Action Button -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="contact.html" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xs font-semibold uppercase tracking-wider rounded-lg group bg-gradient-to-br from-brand-accent to-brand-accentDark text-brand-bg focus:ring-4 focus:outline-none focus:ring-yellow-800 transition-all duration-300">
+                        <span class="relative px-5 py-3 transition-all ease-in duration-75 bg-brand-accent rounded-md group-hover:bg-opacity-0 group-hover:text-brand-textPrimary font-bold">
+                            Get a Free Quote <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-brand-textSecondary hover:text-brand-textPrimary focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-b border-brand-border px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+            <a href="index.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Home</a>
+            <a href="services.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Services</a>
+            <a href="services.html#process" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Process</a>
+            <a href="index.html#projects" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Projects</a>
+            <a href="contact.html" class="block text-brand-accent font-medium text-base py-2 border-b border-brand-border">Contact</a>
+            <div class="pt-4">
+                <a href="contact.html" class="w-full text-center block bg-brand-accent text-brand-bg hover:bg-brand-accentLight font-semibold uppercase tracking-wider text-xs py-4 rounded-lg transition-colors">
+                    Get a Free Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- INNER PAGE HERO -->
+    <section class="relative py-28 bg-brand-card overflow-hidden border-b border-brand-border transition-colors duration-300">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">GET IN TOUCH</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                Request a Custom Estimating Package
+            </h1>
+            <p class="text-brand-textSecondary max-w-2xl mx-auto text-base sm:text-lg font-light leading-relaxed transition-colors duration-300">
+                Connect directly with our surveyors, estimators, and project managers. We provide rapid responses and transparent bills of quantities.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT AREA -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- Left Column: Contact info & Map placeholder -->
+            <div class="lg:col-span-5 flex flex-col justify-between space-y-12 animate-[fadeIn_0.5s_ease-out]">
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Estimating & Depot Contact</h2>
+                    
+                    <!-- Phone -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mr-4 shrink-0 transition-colors duration-300">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-textPrimary uppercase tracking-wider mb-1 transition-colors duration-300">Telephone Enquiry</h3>
+                            <p class="text-brand-textSecondary text-xs mb-1 transition-colors duration-300">Direct to Manchester Head Office</p>
+                            <p class="text-brand-textPrimary font-semibold text-sm transition-colors duration-300">+44 (0) 161 555 0192</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mr-4 shrink-0 transition-colors duration-300">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-textPrimary uppercase tracking-wider mb-1 transition-colors duration-300">Email Surveyors</h3>
+                            <p class="text-brand-textSecondary text-xs mb-1 transition-colors duration-300">For tenders, drawings, and bills of quantities</p>
+                            <p class="text-brand-accent font-semibold text-sm hover:underline transition-colors duration-300"><a href="mailto:info@dcearthworks.co.uk">info@dcearthworks.co.uk</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Offices -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mr-4 shrink-0 transition-colors duration-300">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-textPrimary uppercase tracking-wider mb-1 transition-colors duration-300">Registered Head Office</h3>
+                            <p class="text-brand-textSecondary text-xs leading-relaxed transition-colors duration-300">
+                                Sovereign House, Spinners Lane<br>
+                                Manchester, M2 4DF
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Business hours -->
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-brand-accent/10 border border-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mr-4 shrink-0 transition-colors duration-300">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-brand-textPrimary uppercase tracking-wider mb-1 transition-colors duration-300">Business Hours</h3>
+                            <p class="text-brand-textSecondary text-xs transition-colors duration-300">Mon - Fri: 07:00 - 17:30</p>
+                            <p class="text-brand-textSecondary text-xs transition-colors duration-300">Sat: 08:00 - 13:00 (Emergency calls only)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Placeholder (Styled Premium Card) -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between h-64 shadow-xl transition-colors duration-300">
+                    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+                    <div class="relative z-10 flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-accent font-bold transition-colors duration-300">MAP DIRECTIONS</span>
+                            <h3 class="text-sm font-bold text-brand-textPrimary mt-1 transition-colors duration-300">Manchester Head Office</h3>
+                        </div>
+                        <span class="text-brand-textPrimary/40 transition-colors duration-300"><i class="fa-solid fa-map-location-dot text-2xl"></i></span>
+                    </div>
+                    
+                    <div class="relative w-full h-24 bg-brand-bg/50 rounded-lg border border-brand-border flex items-center justify-center overflow-hidden transition-colors duration-300">
+                        <div class="absolute w-[2px] h-full bg-brand-accent/20 left-1/3 transition-colors duration-300"></div>
+                        <div class="absolute h-[2px] w-full bg-brand-accent/20 top-1/2 transition-colors duration-300"></div>
+                        <!-- Manchester node -->
+                        <div class="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                            <span class="w-3.5 h-3.5 bg-brand-accent rounded-full animate-ping absolute transition-colors duration-300"></span>
+                            <span class="w-2.5 h-2.5 bg-brand-accent rounded-full relative z-10 border-2 border-brand-bg transition-colors duration-300"></span>
+                        </div>
+                        <span class="absolute left-1/3 top-[58%] text-[9px] font-semibold text-brand-accent uppercase tracking-wider -translate-x-1/2 transition-colors duration-300">DC OFFICE</span>
+                    </div>
+
+                    <a href="https://maps.google.com" target="_blank" class="w-full text-center py-2 bg-brand-cardAccent hover:bg-brand-accent hover:text-brand-bg text-[10px] uppercase font-bold tracking-wider rounded-lg transition-colors border border-brand-border">
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Form -->
+            <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-2xl p-8 sm:p-10 shadow-2xl relative transition-colors duration-300">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">ESTIMATE CALCULATOR</span>
+                <h2 class="text-2xl font-bold text-brand-textPrimary mb-8 transition-colors duration-300">Send a Detailed Request</h2>
+                
+                <form id="estimating-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="form-name" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Your Name *</label>
+                            <input type="text" id="form-name" required class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary placeholder-brand-textSecondary/40 focus:outline-none focus:border-brand-accent transition-colors duration-300" placeholder="e.g. John Smith">
+                        </div>
+                        <!-- Company -->
+                        <div>
+                            <label for="form-company" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Company Name</label>
+                            <input type="text" id="form-company" class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary placeholder-brand-textSecondary/40 focus:outline-none focus:border-brand-accent transition-colors duration-300" placeholder="e.g. Apex Developers Ltd">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Phone -->
+                        <div>
+                            <label for="form-phone" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Phone Number *</label>
+                            <input type="tel" id="form-phone" required class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary placeholder-brand-textSecondary/40 focus:outline-none focus:border-brand-accent transition-colors duration-300" placeholder="e.g. +44 7700 900077">
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label for="form-email" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Email Address *</label>
+                            <input type="email" id="form-email" required class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary placeholder-brand-textSecondary/40 focus:outline-none focus:border-brand-accent transition-colors duration-300" placeholder="e.g. j.smith@apex.com">
+                        </div>
+                    </div>
+
+                    <!-- Service Required dropdown -->
+                    <div>
+                        <label for="form-service" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Service Required *</label>
+                        <select id="form-service" required class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary focus:outline-none focus:border-brand-accent transition-colors duration-300 appearance-none">
+                            <option value="" disabled selected class="text-brand-textSecondary/40">Select a Core Service...</option>
+                            <option value="earthmoving">Bulk Earthmoving</option>
+                            <option value="excavation">Precision Excavation</option>
+                            <option value="groundworks">Groundworks & Foundations</option>
+                            <option value="plant-hire">Heavy Plant Hire</option>
+                            <option value="civil">Civil Engineering & Infrastructure</option>
+                            <option value="clearance">Site Clearance & Soil Remediation</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="form-message" class="block text-[10px] font-bold uppercase tracking-wider text-brand-textSecondary mb-2 transition-colors duration-300">Project Brief / Message *</label>
+                        <textarea id="form-message" rows="5" required class="w-full bg-brand-bg border border-brand-border rounded-lg py-3 px-4 text-sm text-brand-textPrimary placeholder-brand-textSecondary/40 focus:outline-none focus:border-brand-accent transition-colors duration-300" placeholder="Briefly describe the site work, location, soil profiles if known, and project timeline..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 bg-brand-accent hover:bg-brand-accentLight text-brand-bg font-bold uppercase tracking-wider text-xs rounded-lg transition-colors shadow-lg shadow-brand-accent/10">
+                        Submit Estimating Inquiry
+                    </button>
+                </form>
+                
+                <!-- SUCCESS MODAL (Hidden by default) -->
+                <div id="success-overlay" class="absolute inset-0 bg-brand-card/95 rounded-2xl flex flex-col items-center justify-center text-center p-8 hidden z-30 transition-colors duration-300">
+                    <span class="w-16 h-16 bg-brand-accent/15 border border-brand-accent/30 text-brand-accent rounded-full flex items-center justify-center text-3xl mb-6 transition-colors duration-300"><i class="fa-solid fa-paper-plane"></i></span>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-2 transition-colors duration-300">Estimate Request Received</h3>
+                    <p class="text-brand-textSecondary text-xs max-w-sm mb-6 leading-relaxed transition-colors duration-300">
+                        Thank you for your submission. A senior quantity surveyor or estimator will review your drawings and message and respond within 24 hours.
+                    </p>
+                    <button id="reset-form-btn" class="px-6 py-2.5 bg-brand-bg border border-brand-border hover:border-brand-accent text-xs font-semibold uppercase tracking-wider text-brand-textPrimary rounded-lg transition-colors">
+                        Send Another Inquiry
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: FAQ ACCORDION -->
+    <section class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">COMMON QUESTIONS</span>
+                <h2 class="text-3xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                    Contractor & Estimating FAQ
+                </h2>
+                <p class="text-brand-textSecondary font-light text-sm max-w-2xl mx-auto transition-colors duration-300">
+                    Review answers to standard queries regarding compliance, plant capacity, insurance, and billing policies.
+                </p>
+            </div>
+
+            <!-- FAQ Items List -->
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-brand-bg border border-brand-border rounded-xl transition-all duration-300">
+                    <button class="w-full py-5 px-6 flex justify-between items-center text-left text-sm font-semibold text-brand-textPrimary focus:outline-none">
+                        <span>Do you provide full RAMS packages prior to site mobilization?</span>
+                        <span class="faq-chevron text-brand-accent transition-transform duration-300 ml-4"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-xs text-brand-textSecondary font-light leading-relaxed">
+                        Yes, absolutely. A fully detailed Risk Assessment and Method Statement (RAMS) is produced by our health and safety director and provided to the client for approval before any plant or personnel arrive on site.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-brand-bg border border-brand-border rounded-xl transition-all duration-300">
+                    <button class="w-full py-5 px-6 flex justify-between items-center text-left text-sm font-semibold text-brand-textPrimary focus:outline-none">
+                        <span>Are all plant operators CPCS or NPORS certified?</span>
+                        <span class="faq-chevron text-brand-accent transition-transform duration-300 ml-4"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-xs text-brand-textSecondary font-light leading-relaxed">
+                        Yes. All DC Earthworks operators hold valid Construction Plant Competence Scheme (CPCS) or NPORS card registrations corresponding directly to their specific plant category (excavator, bulldozer, etc.) and have undergone full CSCS health and safety checks.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-brand-bg border border-brand-border rounded-xl transition-all duration-300">
+                    <button class="w-full py-5 px-6 flex justify-between items-center text-left text-sm font-semibold text-brand-textPrimary focus:outline-none">
+                        <span>What limits of public and employer liability insurance do you carry?</span>
+                        <span class="faq-chevron text-brand-accent transition-transform duration-300 ml-4"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-xs text-brand-textSecondary font-light leading-relaxed">
+                        We carry a comprehensive corporate insurance package with £10 Million public liability cover, £10 Million employers liability cover, and full professional indemnity insurance. Certification can be supplied upon pre-contract request.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item bg-brand-bg border border-brand-border rounded-xl transition-all duration-300">
+                    <button class="w-full py-5 px-6 flex justify-between items-center text-left text-sm font-semibold text-brand-textPrimary focus:outline-none">
+                        <span>How are cut-and-fill calculations verified on site?</span>
+                        <span class="faq-chevron text-brand-accent transition-transform duration-300 ml-4"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-xs text-brand-textSecondary font-light leading-relaxed">
+                        We utilize advanced drone topographic scanners and 3D GPS machine control (Leica system). The excavator operator works directly with the digital terrain model, and our civil engineers run topographic validation surveys at standard intervals to check depth specifications.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item bg-brand-bg border border-brand-border rounded-xl transition-all duration-300">
+                    <button class="w-full py-5 px-6 flex justify-between items-center text-left text-sm font-semibold text-brand-textPrimary focus:outline-none">
+                        <span>What is your policy on recycling site concrete and soils?</span>
+                        <span class="faq-chevron text-brand-accent transition-transform duration-300 ml-4"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-answer px-6 pb-5 text-xs text-brand-textSecondary font-light leading-relaxed">
+                        We prioritize on-site material reuse. Crushing concrete to 6F2 specification and lime-stabilizing wet clays are standard practices we employ to convert waste materials into reusable fill, keeping disposal fees and environmental impact minimal.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0B0C0E] border-t border-brand-border pt-20 pb-10 text-brand-textSecondary text-xs transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Col 1: About Logo -->
+                <div class="lg:col-span-4">
+                    <a href="index.html" class="flex items-center space-x-3 mb-6 group">
+                        <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                            <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-xl tracking-tight text-white block leading-none">DC</span>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                        </div>
+                    </a>
+                    <p class="leading-relaxed mb-6 font-light text-brand-textSecondary pr-6">
+                        DC Earthworks and Groundworks is a premium subcontractor supplying precision civil engineering, plant hire, and bulk earthworks packages to developers across England, Scotland, and Wales.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Services Links -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Services</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="services.html#earthmoving" class="hover:text-brand-accent transition-colors">Bulk Earthmoving</a></li>
+                        <li><a href="services.html#excavation" class="hover:text-brand-accent transition-colors">Excavation & Trenching</a></li>
+                        <li><a href="services.html#groundworks" class="hover:text-brand-accent transition-colors">Deep Drainage & Slabs</a></li>
+                        <li><a href="services.html#plant-hire" class="hover:text-brand-accent transition-colors">Heavy Plant Hire</a></li>
+                        <li><a href="services.html#civil" class="hover:text-brand-accent transition-colors">Civil Engineering</a></li>
+                        <li><a href="services.html#clearance" class="hover:text-brand-accent transition-colors">Remediation & Demolition</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                        <li><a href="services.html#process" class="hover:text-brand-accent transition-colors">Our Process</a></li>
+                        <li><a href="index.html#projects" class="hover:text-brand-accent transition-colors">Featured Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition-colors">Contact Estimating</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Details -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Contact Details</h3>
+                    <ul class="space-y-3 font-light text-brand-textSecondary">
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-phone"></i></span>
+                            <span>+44 (0) 161 555 0192</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-envelope"></i></span>
+                            <span>info@dcearthworks.co.uk</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>
+                                DC Head Office<br>
+                                Sovereign House, Spinners Lane<br>
+                                Manchester, M2 4DF
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-clock"></i></span>
+                            <span>Mon - Fri: 07:00 - 17:30</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Accreditation Logos -->
+            <div class="border-t border-brand-border py-8 flex flex-wrap justify-between items-center gap-6 transition-colors duration-300">
+                <div class="flex flex-wrap items-center gap-6">
+                    <span class="font-semibold uppercase tracking-wider text-[10px] text-brand-textSecondary">Accredited by:</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">CHAS Premium</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">SMAS Worksafe</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">ISO 9001</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">Constructionline Gold</span>
+                </div>
+                <div class="text-[10px] text-brand-textSecondary font-light">
+                    © 2026 DC Earthworks & Groundworks Ltd. All Rights Reserved. Co No: 09283748. VAT No: GB827381920.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+        // Sticky Header shrink on scroll
+        const header = document.getElementById('sticky-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-xl', 'bg-brand-bg');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow-xl', 'bg-brand-bg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < revealElements.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = revealElements[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Form Validation & Success Overlay
+        const estimatingForm = document.getElementById('estimating-form');
+        const successOverlay = document.getElementById('success-overlay');
+        const resetFormBtn = document.getElementById('reset-form-btn');
+
+        estimatingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            successOverlay.classList.remove('hidden');
+        });
+
+        resetFormBtn.addEventListener('click', () => {
+            estimatingForm.reset();
+            successOverlay.classList.add('hidden');
+        });
+
+        // FAQ Accordion Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            button.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // DESIGN STYLE SWITCHER & PERSISTENCE
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToast = document.getElementById('theme-toast');
+        const toastMessage = document.getElementById('toast-message');
+
+        const savedTheme = localStorage.getItem('site-theme') || 'theme-dark';
+        if (savedTheme === 'theme-light') {
+            document.body.classList.add('theme-light');
+            themeToggleBtn.querySelector('span').innerText = 'Style: Architectural Light';
+        } else {
+            document.body.classList.remove('theme-light');
+            themeToggleBtn.querySelector('span').innerText = 'Style: Industrial Dark';
+        }
+
+        const showToast = (message) => {
+            toastMessage.innerText = message;
+            themeToast.classList.remove('translate-y-20', 'opacity-0');
+            themeToast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                themeToast.classList.remove('translate-y-0', 'opacity-100');
+                themeToast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('theme-light');
+            const newTheme = isLight ? 'theme-light' : 'theme-dark';
+            localStorage.setItem('site-theme', newTheme);
+            
+            if (isLight) {
+                themeToggleBtn.querySelector('span').innerText = 'Style: Architectural Light';
+                showToast('Aesthetic changed to Architectural Bronze Light');
+            } else {
+                themeToggleBtn.querySelector('span').innerText = 'Style: Industrial Dark';
+                showToast('Aesthetic changed to Heavy Industrial Dark');
+            }
+        });
+    </script>
+</body>
+</html>

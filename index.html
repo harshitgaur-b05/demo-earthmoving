@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Earthworks & Groundworks | Premium UK Site Preparation & Plant Hire</title>
+    <meta name="description" content="Leading UK Earthmoving, Bulk Excavation, and Groundworks specialists. Delivering multi-million pound infrastructure and site preparation projects safely, on time, and within budget.">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'var(--color-bg)',
+                            bgDark: 'var(--color-bg-dark)',
+                            card: 'var(--color-card)',
+                            cardAccent: 'var(--color-card-accent)',
+                            border: 'var(--color-border)',
+                            accent: 'var(--color-accent)',
+                            accentLight: 'var(--color-accent-light)',
+                            accentDark: 'var(--color-accent-dark)',
+                            textPrimary: 'var(--color-text-primary)',
+                            textSecondary: 'var(--color-text-secondary)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-bg: #0E0F11;
+            --color-bg-dark: #0B0C0E;
+            --color-card: #16181B;
+            --color-card-accent: #23262B;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-accent: #D99C00;
+            --color-accent-light: #F5B50A;
+            --color-accent-dark: #B07E00;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #8E919A;
+        }
+        
+        .theme-light {
+            --color-bg: #F8FAFC;
+            --color-bg-dark: #F1F5F9;
+            --color-card: #FFFFFF;
+            --color-card-accent: #E2E8F0;
+            --color-border: rgba(15, 23, 42, 0.08);
+            --color-accent: #854D0E;
+            --color-accent-light: #A16207;
+            --color-accent-dark: #713F12;
+            --color-text-primary: #0F172A;
+            --color-text-secondary: #475569;
+        }
+
+        .theme-minimalist {
+            --color-bg: #050507;
+            --color-bg-dark: #020203;
+            --color-card: #0C0C0F;
+            --color-card-accent: #141417;
+            --color-border: rgba(255, 255, 255, 0.07);
+            --color-accent: #E2E8F0; /* Crisp White-Silver */
+            --color-accent-light: #F8FAFC;
+            --color-accent-dark: #CBD5E1;
+            --color-text-primary: #F8FAFC;
+            --color-text-secondary: #94A3B8;
+        }
+
+        .theme-glass {
+            --color-bg: transparent;
+            --color-bg-dark: transparent;
+            --color-card: rgba(255,255,255,0.07);
+            --color-card-accent: rgba(255,255,255,0.12);
+            --color-border: rgba(255,255,255,0.18);
+            --color-accent: #A78BFA; /* Vivid Violet */
+            --color-accent-light: #C4B5FD;
+            --color-accent-dark: #7C3AED;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: rgba(255,255,255,0.65);
+        }
+
+        /* ============================================================
+           GLASSMORPHISM AURORA BACKGROUND
+           ============================================================ */
+        body.theme-glass {
+            background: linear-gradient(135deg, #0f0c29 0%, #1a0533 25%, #1b1464 50%, #0d1b4b 75%, #0f0c29 100%) !important;
+            background-attachment: fixed !important;
+        }
+        /* Aurora orb layer — sits BEHIND all content, z-index -1 */
+        #glass-orb-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        #glass-orb-layer .orb1 {
+            position: absolute;
+            top: -30%;
+            left: -15%;
+            width: 75vw;
+            height: 75vw;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(124, 58, 237, 0.40) 0%, transparent 65%);
+            animation: floatOrb 12s ease-in-out infinite alternate;
+        }
+        #glass-orb-layer .orb2 {
+            position: absolute;
+            bottom: -25%;
+            right: -10%;
+            width: 65vw;
+            height: 65vw;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.30) 0%, transparent 65%);
+            animation: floatOrb 16s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes floatOrb {
+            from { transform: translate(0, 0) scale(1); }
+            to   { transform: translate(45px, 35px) scale(1.1); }
+        }
+        /* Glass card style override */
+        body.theme-glass .bg-brand-card,
+        body.theme-glass .bg-brand-bg {
+            background: rgba(255,255,255,0.07) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border-color: rgba(255,255,255,0.18) !important;
+        }
+        body.theme-glass .bg-brand-bgDark {
+            background: rgba(0,0,0,0.25) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+        }
+        body.theme-glass header {
+            background: rgba(15,12,41,0.60) !important;
+            backdrop-filter: blur(28px) !important;
+            -webkit-backdrop-filter: blur(28px) !important;
+        }
+        body.theme-glass .custom-glow:hover {
+            box-shadow: 0 0 40px -8px rgba(167, 139, 250, 0.45) !important;
+        }
+
+        /* Minimalist theme — refined mono feel */
+        body.theme-minimalist .bg-brand-card,
+        body.theme-minimalist .bg-brand-bg {
+            border-color: rgba(255,255,255,0.07) !important;
+        }
+
+        /* ============================================================
+           BRUTAL + MINIMALIST THEME
+           Raw authority. Zero decoration. Pure conversion.
+           ============================================================ */
+        .theme-brutal {
+            --color-bg: #080808;
+            --color-bg-dark: #000000;
+            --color-card: #111111;
+            --color-card-accent: #1A1A1A;
+            --color-border: rgba(255,255,255,0.12);
+            --color-accent: #FF2D2D;         /* Blood red — urgency */
+            --color-accent-light: #FF5555;
+            --color-accent-dark: #CC0000;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #888888;
+        }
+
+        /* ---- Grid background texture ---- */
+        body.theme-brutal {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px) !important;
+            background-size: 60px 60px !important;
+            background-color: #080808 !important;
+        }
+
+        /* ---- Zero border-radius on everything ---- */
+        body.theme-brutal *,
+        body.theme-brutal .rounded-2xl,
+        body.theme-brutal .rounded-xl,
+        body.theme-brutal .rounded-lg,
+        body.theme-brutal .rounded-full,
+        body.theme-brutal .rounded {
+            border-radius: 0 !important;
+        }
+
+        /* ---- Cards: raw thick-border look ---- */
+        body.theme-brutal .bg-brand-card {
+            background: #111111 !important;
+            border-left: 3px solid var(--color-accent) !important;
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        }
+        body.theme-brutal .bg-brand-bg {
+            background: #0D0D0D !important;
+            border-left: 3px solid var(--color-accent) !important;
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        }
+        body.theme-brutal .bg-brand-bgDark {
+            background: #000000 !important;
+            border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+        }
+
+        /* ---- Header: raw bar ---- */
+        body.theme-brutal header {
+            background: rgba(0,0,0,0.98) !important;
+            border-bottom: 2px solid #FF2D2D !important;
+            backdrop-filter: none !important;
+        }
+
+        /* ---- Buttons: brutal block style ---- */
+        body.theme-brutal a[href="contact.html"],
+        body.theme-brutal button {
+            letter-spacing: 0.15em !important;
+        }
+
+        /* ---- Accent icon containers: square raw ---- */
+        body.theme-brutal .w-14 {
+            background: transparent !important;
+            border: 2px solid var(--color-accent) !important;
+        }
+        body.theme-brutal .w-8 {
+            background: transparent !important;
+            border: 1px solid var(--color-accent) !important;
+        }
+
+        /* ---- H2 section titles: oversized tracking ---- */
+        body.theme-brutal h2 {
+            letter-spacing: -0.02em !important;
+            text-transform: uppercase !important;
+        }
+        body.theme-brutal h3 {
+            text-transform: uppercase !important;
+            letter-spacing: 0.04em !important;
+        }
+
+        /* ---- Stats bar: brutal numbers ---- */
+        body.theme-brutal [id^="counter-"],
+        body.theme-brutal .text-brand-accent {
+            font-variant-numeric: tabular-nums !important;
+        }
+
+        /* ---- CTA buttons: solid block with no rounded ---- */
+        body.theme-brutal .shadow-lg {
+            box-shadow: 4px 4px 0px #CC0000 !important;
+        }
+        body.theme-brutal .shadow-lg:hover {
+            box-shadow: 6px 6px 0px #CC0000 !important;
+            transform: translate(-2px,-2px) !important;
+        }
+
+        /* ---- Service cards hover: red left stripe glow ---- */
+        body.theme-brutal .custom-glow:hover {
+            box-shadow: -4px 0 0 0 #FF2D2D, 4px 4px 0 0 rgba(255,45,45,0.15) !important;
+            border-left-color: #FF2D2D !important;
+        }
+
+        /* ---- Divider accent bar ---- */
+        body.theme-brutal .h-1.w-20 {
+            height: 3px !important;
+            background: #FF2D2D !important;
+        }
+
+        /* ---- Nav underlines: thick red ---- */
+        body.theme-brutal nav a span {
+            height: 3px !important;
+        }
+
+        /* ---- Ping/dot accents keep red color ---- */
+        body.theme-brutal .animate-ping {
+            background: #FF2D2D !important;
+        }
+
+        /* ---- Active dock button color ---- */
+        #design-switcher-dock .dock-btn.active-brutal .btn-icon,
+        #design-switcher-dock .dock-btn.active-brutal .btn-text { color: #FF2D2D; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .custom-glow:hover {
+            box-shadow: 0 10px 30px -10px rgba(217, 156, 0, 0.15);
+        }
+        .theme-light .custom-glow:hover {
+            box-shadow: 0 10px 30px -10px rgba(133, 77, 14, 0.1);
+        }
+        .theme-minimalist .custom-glow:hover {
+            box-shadow: 0 8px 28px -10px rgba(226, 232, 240, 0.12);
+        }
+
+        /* ============================================================
+           DESIGN SWITCHER DOCK — Premium, Impossible to Miss
+           ============================================================ */
+        #design-switcher-dock {
+            position: fixed;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            pointer-events: auto;
+        }
+        #design-switcher-dock .dock-label {
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            line-height: 1;
+        }
+        #design-switcher-dock .dock-inner {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(10, 10, 14, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 20px;
+            padding: 8px 12px;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.6),
+                0 0 0 1px rgba(255,255,255,0.04) inset,
+                0 4px 16px rgba(0,0,0,0.4);
+        }
+        #design-switcher-dock .dock-sep {
+            width: 1px;
+            height: 28px;
+            background: rgba(255,255,255,0.12);
+            flex-shrink: 0;
+        }
+        #design-switcher-dock .dock-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            min-width: 68px;
+            padding: 8px 12px;
+            border-radius: 14px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+        #design-switcher-dock .dock-btn:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-2px);
+        }
+        #design-switcher-dock .dock-btn .btn-icon {
+            font-size: 15px;
+            transition: all 0.25s ease;
+            color: rgba(255,255,255,0.5);
+        }
+        #design-switcher-dock .dock-btn .btn-text {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            transition: all 0.25s ease;
+        }
+        #design-switcher-dock .dock-btn.active {
+            background: rgba(255,255,255,0.10);
+        }
+        #design-switcher-dock .dock-btn.active .btn-icon,
+        #design-switcher-dock .dock-btn.active .btn-text {
+            color: #ffffff;
+        }
+        #design-switcher-dock .dock-btn.active-industrial .btn-icon,
+        #design-switcher-dock .dock-btn.active-industrial .btn-text { color: #D99C00; }
+        #design-switcher-dock .dock-btn.active-light .btn-icon,
+        #design-switcher-dock .dock-btn.active-light .btn-text { color: #A16207; }
+        #design-switcher-dock .dock-btn.active-minimal .btn-icon,
+        #design-switcher-dock .dock-btn.active-minimal .btn-text { color: #E2E8F0; }
+        #design-switcher-dock .dock-btn.active-glass .btn-icon,
+        #design-switcher-dock .dock-btn.active-glass .btn-text { color: #A78BFA; }
+        #design-switcher-dock .dock-btn .active-dot {
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        #design-switcher-dock .dock-btn.active .active-dot { opacity: 1; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- Aurora Orb Layer for Glass Theme (hidden by default) -->
+    <div id="glass-orb-layer" style="display:none;">
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+    </div>
+
+    <!-- ============================================================
+         DESIGN SWITCHER DOCK — Premium, Highly Visible
+         ============================================================ -->
+    <div id="design-switcher-dock">
+        <div class="dock-label">✦ &nbsp; Select Design Concept &nbsp; ✦</div>
+        <div class="dock-inner">
+
+            <!-- Industrial Dark -->
+            <button id="btn-theme-dark" class="dock-btn" onclick="setTheme('theme-dark')" title="Heavy Industrial Dark">
+                <i class="fa-solid fa-industry btn-icon"></i>
+                <span class="btn-text">Industrial</span>
+                <span class="active-dot"></span>
+            </button>
+
+            <div class="dock-sep"></div>
+
+            <!-- Architectural Light -->
+            <button id="btn-theme-light" class="dock-btn" onclick="setTheme('theme-light')" title="Architectural Bronze Light">
+                <i class="fa-solid fa-sun btn-icon"></i>
+                <span class="btn-text">Light</span>
+                <span class="active-dot"></span>
+            </button>
+
+            <div class="dock-sep"></div>
+
+            <!-- Steel Minimalist -->
+            <button id="btn-theme-minimalist" class="dock-btn" onclick="setTheme('theme-minimalist')" title="Steel Minimalist">
+                <i class="fa-solid fa-minus btn-icon"></i>
+                <span class="btn-text">Minimal</span>
+                <span class="active-dot"></span>
+            </button>
+
+            <div class="dock-sep"></div>
+
+            <!-- Glassmorphism -->
+            <button id="btn-theme-glass" class="dock-btn" onclick="setTheme('theme-glass')" title="Glassmorphism">
+                <i class="fa-solid fa-gem btn-icon"></i>
+                <span class="btn-text">Glass</span>
+                <span class="active-dot"></span>
+            </button>
+
+            <div class="dock-sep"></div>
+
+            <!-- Brutal Minimalist -->
+            <button id="btn-theme-brutal" class="dock-btn" onclick="setTheme('theme-brutal')" title="Brutal Minimalist">
+                <i class="fa-solid fa-bolt btn-icon"></i>
+                <span class="btn-text">Brutal</span>
+                <span class="active-dot"></span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="theme-toast" class="fixed bottom-36 left-1/2 transform -translate-x-1/2 z-50 opacity-0 scale-95 pointer-events-none bg-brand-card border border-brand-border px-6 py-3 rounded-full shadow-2xl text-[10px] uppercase tracking-wider font-semibold text-brand-textPrimary transition-all duration-300 flex items-center space-x-2" style="z-index:9998;">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-ping"></span>
+        <span id="toast-message">Style changed successfully.</span>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="bg-brand-bgDark border-b border-brand-border py-2 px-4 text-xs text-brand-textSecondary hidden lg:block transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-phone text-brand-accent mr-2"></i> +44 (0) 161 555 0192</span>
+                <span><i class="fa-solid fa-envelope text-brand-accent mr-2"></i> info@dcearthworks.co.uk</span>
+                <span><i class="fa-solid fa-location-dot text-brand-accent mr-2"></i> Manchester & London Depots</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CHAS Premium</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">FORS Gold</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CPA Member</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CITB Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / STICKY NAVIGATION -->
+    <header id="sticky-header" class="sticky top-0 z-40 transition-all duration-300 bg-brand-bg/85 backdrop-blur-md border-b border-brand-border py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                        <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-brand-textPrimary block leading-none transition-colors duration-300">DC</span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent rounded-full"></span>
+                    </a>
+                    <a href="services.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html#process" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Process
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#projects" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Right Action Button -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="contact.html" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xs font-semibold uppercase tracking-wider rounded-lg group bg-gradient-to-br from-brand-accent to-brand-accentDark text-brand-bg focus:ring-4 focus:outline-none focus:ring-yellow-800 transition-all duration-300">
+                        <span class="relative px-5 py-3 transition-all ease-in duration-75 bg-brand-accent rounded-md group-hover:bg-opacity-0 group-hover:text-brand-textPrimary font-bold">
+                            Get a Free Quote <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-brand-textSecondary hover:text-brand-textPrimary focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-b border-brand-border px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+            <a href="index.html" class="block text-brand-accent font-medium text-base py-2 border-b border-brand-border">Home</a>
+            <a href="services.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Services</a>
+            <a href="services.html#process" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Process</a>
+            <a href="index.html#projects" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Projects</a>
+            <a href="contact.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Contact</a>
+            <div class="pt-4">
+                <a href="contact.html" class="w-full text-center block bg-brand-accent text-brand-bg hover:bg-brand-accentLight font-semibold uppercase tracking-wider text-xs py-4 rounded-lg transition-colors">
+                    Get a Free Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-[85vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Earthmoving: massive CAT excavator loading dumper truck in an active quarry -->
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=85&w=2340" 
+                 alt="Heavy CAT excavator on active earthmoving site — DC Earthworks UK" 
+                 class="w-full h-full object-cover object-center scale-105" 
+                 style="animation: zoom 22s ease-in-out infinite alternate;">
+            <!-- Layered Gradient Overlays for drama & readability -->
+            <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(8,8,10,0.92) 0%, rgba(8,8,10,0.68) 45%, rgba(8,8,10,0.28) 100%);"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent"></div>
+            <!-- Warm amber tint echoing brand gold -->
+            <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(180,110,0,0.20) 0%, transparent 60%);"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <!-- Premium Accent Tag -->
+                <div class="inline-flex items-center space-x-2 bg-brand-accent/10 border border-brand-accent/30 px-3 py-1.5 rounded-full mb-6 text-brand-accent text-xs font-semibold tracking-wider uppercase">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+                    <span>UK-Wide Operations & Infrastructure Specialists</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-textPrimary mb-6 leading-tight transition-colors duration-300">
+                    Trusted Earthmoving & <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accentLight">Groundworks</span> Across the UK
+                </h1>
+                
+                <p class="text-base sm:text-lg text-brand-textSecondary mb-8 max-w-2xl font-light leading-relaxed transition-colors duration-300">
+                    DC Earthworks delivers high-precision bulk excavation, site remediation, enabling works, and civil engineering solutions for commercial, residential, and industrial infrastructure projects. 
+                </p>
+
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="contact.html" class="px-8 py-4 bg-brand-accent hover:bg-brand-accentLight text-brand-bg text-sm font-semibold uppercase tracking-wider rounded-lg text-center transition-all duration-300 shadow-lg shadow-brand-accent/10 hover:shadow-brand-accent/35 transform hover:-translate-y-0.5 font-bold">
+                        Request a Quote
+                    </a>
+                    <a href="services.html" class="px-8 py-4 bg-transparent hover:bg-brand-textPrimary/5 text-brand-textPrimary border border-brand-textPrimary/20 hover:border-brand-textPrimary/40 text-sm font-semibold uppercase tracking-wider rounded-lg text-center transition-all duration-300">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING STATS BAR -->
+    <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-md transition-colors duration-300">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-brand-border">
+                <!-- Stat 1 -->
+                <div class="flex flex-col items-center justify-center p-4">
+                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 transition-colors duration-300" id="counter-years">20+</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-textSecondary font-semibold text-center transition-colors duration-300">Years Experience</span>
+                </div>
+                <!-- Stat 2 -->
+                <div class="flex flex-col items-center justify-center p-4 pt-8 lg:pt-4">
+                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 transition-colors duration-300" id="counter-projects">500+</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-textSecondary font-semibold text-center transition-colors duration-300">Projects Completed</span>
+                </div>
+                <!-- Stat 3 -->
+                <div class="flex flex-col items-center justify-center p-4 pt-8 lg:pt-4">
+                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 transition-colors duration-300">100%</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-textSecondary font-semibold text-center transition-colors duration-300">RAMS Compliant</span>
+                </div>
+                <!-- Stat 4 -->
+                <div class="flex flex-col items-center justify-center p-4 pt-8 lg:pt-4">
+                    <span class="text-brand-accent text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 transition-colors duration-300">£10M</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-textSecondary font-semibold text-center transition-colors duration-300">Public Liability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left: Image Layout -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Bulk earthworks site setup" 
+                         class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 to-transparent"></div>
+                </div>
+                <!-- Floating Accent Box -->
+                <div class="absolute -bottom-6 -right-6 bg-brand-accent text-brand-bg p-6 rounded-xl shadow-xl hidden sm:block max-w-xs border border-brand-accentLight transition-colors duration-300">
+                    <p class="font-extrabold text-2xl leading-tight">ISO 9001</p>
+                    <p class="text-xs font-semibold uppercase tracking-wider opacity-85 mt-1">Certified Quality Management</p>
+                </div>
+            </div>
+
+            <!-- Right: Copy & Checklist -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 transition-colors duration-300">WHO WE ARE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 leading-tight transition-colors duration-300">
+                    Delivering Precise Site Solutions for Tier-1 UK Contractors
+                </h2>
+                
+                <div class="h-1 w-20 bg-brand-accent mb-6 transition-colors duration-300"></div>
+
+                <p class="text-brand-textSecondary text-base leading-relaxed mb-6 font-light transition-colors duration-300">
+                    DC Earthworks & Groundworks is a premier UK civil engineering contractor. Headquartered in the North West with regional depots servicing London and the Midlands, we provide robust, reliable, and professional enabling packages to the UK's leading residential developers and infrastructure consortia.
+                </p>
+                <p class="text-brand-textSecondary text-base leading-relaxed mb-8 font-light transition-colors duration-300">
+                    From initial remediation and site clearance to heavy engineering, foundations, and deep drainage infrastructure, our CPCS-qualified operatives and modern, GPS-guided fleet ensure your build commences on solid ground.
+                </p>
+
+                <!-- Checklist -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3 group">
+                        <span class="w-8 h-8 rounded-lg bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        <span class="font-semibold text-sm text-brand-textPrimary transition-colors duration-300">Modern GPS-Guided Fleet</span>
+                    </div>
+                    <div class="flex items-center space-x-3 group">
+                        <span class="w-8 h-8 rounded-lg bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        <span class="font-semibold text-sm text-brand-textPrimary transition-colors duration-300">Experienced CPCS Operators</span>
+                    </div>
+                    <div class="flex items-center space-x-3 group">
+                        <span class="w-8 h-8 rounded-lg bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        <span class="font-semibold text-sm text-brand-textPrimary transition-colors duration-300">Safety First (HSE Compliant)</span>
+                    </div>
+                    <div class="flex items-center space-x-3 group">
+                        <span class="w-8 h-8 rounded-lg bg-brand-accent/15 border border-brand-accent/30 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </span>
+                        <span class="font-semibold text-sm text-brand-textPrimary transition-colors duration-300">Reliable Project Timelines</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW SECTION -->
+    <section class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">CORE CAPABILITIES</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                    Our Premium Engineering & Contracting Services
+                </h2>
+                <p class="text-brand-textSecondary font-light transition-colors duration-300">
+                    We deploy state-of-the-art technology and high-caliber plant machinery to cover all phases of site preparation, civil works, and infrastructure delivery.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Earthmoving -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-truck-ramp-box text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Earthmoving</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Bulk muck away, cut-and-fill modeling, site grading, and material importing. Using advanced 3D GPS modeling to optimize cut-fill balances and minimize disposal costs.
+                    </p>
+                    <a href="services.html#earthmoving" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Excavation -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-trowel-bricks text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Excavation</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Precision trenching, foundation footing excavation, basement dig outs, and water storage lagoons. Executed by experienced CPCS-certified plant operators.
+                    </p>
+                    <a href="services.html#excavation" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors font-bold">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Groundworks -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-road text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Groundworks</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Deep drainage infrastructure, storm sewers, foundations, floor slabs, road construction, and external paving/kerbing for major commercial and housing estates.
+                    </p>
+                    <a href="services.html#groundworks" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Plant Hire -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-truck-monster text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Plant Hire</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Operated or self-drive hire of high-specification machinery, including 13T to 35T tracked excavators, dumpers, and double-drum rollers, all rigorously inspected.
+                    </p>
+                    <a href="services.html#plant-hire" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors font-bold font-bold">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5: Civil Engineering -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-bridge text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Civil Engineering</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Enabling works, utilities trenching, culvert installation, slope stabilization, reinforced concrete works, and general structural ground engineering packages.
+                    </p>
+                    <a href="services.html#civil" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors font-bold">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6: Site Clearance -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 hover:border-brand-accent/40 transition-all duration-300 group custom-glow">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                        <i class="fa-solid fa-recycle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors duration-200">Site Clearance</h3>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Demolition, vegetation removal, brownfield remediation, hazardous soil classification and removal, and site preparation for follow-on structural packages.
+                    </p>
+                    <a href="services.html#clearance" class="text-xs uppercase tracking-wider font-semibold text-brand-accent hover:text-brand-textPrimary flex items-center transition-colors">
+                        Learn More <i class="fa-solid fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS / PORTFOLIO SECTION -->
+    <section id="projects" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">OUR PORTFOLIO</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary transition-colors duration-300">
+                    Delivering Engineering Excellence
+                </h2>
+            </div>
+            <!-- Interactive Filters (Vanilla JS) -->
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="project-filters">
+                <button class="filter-btn active px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-brand-accent text-brand-bg rounded-md transition-colors border border-brand-accent" data-filter="all">All Projects</button>
+                <button class="filter-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-brand-card hover:bg-brand-cardAccent text-brand-textSecondary hover:text-brand-textPrimary rounded-md transition-colors border border-brand-border" data-filter="excavation">Excavation</button>
+                <button class="filter-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-brand-card hover:bg-brand-cardAccent text-brand-textSecondary hover:text-brand-textPrimary rounded-md transition-colors border border-brand-border" data-filter="groundworks">Groundworks</button>
+                <button class="filter-btn px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-brand-card hover:bg-brand-cardAccent text-brand-textSecondary hover:text-brand-textPrimary rounded-md transition-colors border border-brand-border" data-filter="infrastructure">Infrastructure</button>
+            </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-item group overflow-hidden bg-brand-card border border-brand-border rounded-2xl transition-all duration-300 hover:border-brand-accent/30" data-category="infrastructure">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Logistics Park Groundworks" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-brand-accent text-brand-bg px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider transition-colors duration-300">
+                        Infrastructure
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i> Birmingham, UK</span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-1 mb-2 transition-colors duration-300">Midlands Gateway Logistics Park</h3>
+                    <p class="text-brand-textSecondary text-xs font-light leading-relaxed transition-colors duration-300">
+                        Bulk muck away, cut-and-fill modeling, and deep attenuation drainage structures for a 200,000 sq ft logistics facility. Complete CPCS plant package.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item group overflow-hidden bg-brand-card border border-brand-border rounded-2xl transition-all duration-300 hover:border-brand-accent/30" data-category="groundworks">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Housing Estate Site Prep" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-brand-accent text-brand-bg px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider transition-colors duration-300">
+                        Groundworks
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i> Cheshire, UK</span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-1 mb-2 transition-colors duration-300">Residential Enabling Works</h3>
+                    <p class="text-brand-textSecondary text-xs font-light leading-relaxed transition-colors duration-300">
+                        Preparation of site, foundation excavations, ring beam installations, and adoptable road infrastructure for 120-unit luxury residential development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item group overflow-hidden bg-brand-card border border-brand-border rounded-2xl transition-all duration-300 hover:border-brand-accent/30" data-category="excavation">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Commercial Basement Excavation" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-brand-accent text-brand-bg px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider transition-colors duration-300">
+                        Excavation
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i> Central London, UK</span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-1 mb-2 transition-colors duration-300">Commercial Basement Dig Out</h3>
+                    <p class="text-brand-textSecondary text-xs font-light leading-relaxed transition-colors duration-300">
+                        Complex multi-level basement excavation with secant piling support, requiring strict vibration control monitoring and tight-access plant machinery.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-item group overflow-hidden bg-brand-card border border-brand-border rounded-2xl transition-all duration-300 hover:border-brand-accent/30" data-category="infrastructure">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Bypass Road Substructure" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-brand-accent text-brand-bg px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider transition-colors duration-300">
+                        Infrastructure
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-brand-accent font-semibold transition-colors duration-300"><i class="fa-solid fa-location-dot mr-1"></i> Leeds, UK</span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-1 mb-2 transition-colors duration-300">Bypass Ground Stabilization</h3>
+                    <p class="text-brand-textSecondary text-xs font-light leading-relaxed transition-colors duration-300">
+                        Bulk earthmoving and soil stabilization works on a 3km highway expansion. Cut-and-fill balances calculated utilizing GPS drone topographic modeling.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLEET SECTION -->
+    <section class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">HEAVY PLANT</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                    Our Modern, High-Specification Fleet
+                </h2>
+                <p class="text-brand-textSecondary font-light transition-colors duration-300">
+                    Every piece of machinery in our fleet is fully serviced, eco-compliant (Stage V), and loaded with advanced Leica GPS machine control systems.
+                </p>
+            </div>
+
+            <!-- Fleet Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fleet 1 -->
+                <div class="bg-brand-bg rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="h-56 bg-brand-cardAccent relative overflow-hidden flex items-center justify-center transition-colors duration-300">
+                        <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&q=80&w=600" 
+                             alt="Tracked Excavator" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-brand-textPrimary transition-colors duration-300">Tracked Excavators</h3>
+                        <p class="text-xs text-brand-accent font-medium mt-1 mb-4 transition-colors duration-300">CAT 320 / Volvo EC220D (13T - 35T)</p>
+                        <div class="space-y-2 border-t border-brand-border pt-4 text-xs text-brand-textSecondary transition-colors duration-300">
+                            <div class="flex justify-between"><span>GPS Control</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">Leica 3D Integrated</span></div>
+                            <div class="flex justify-between"><span>Stage V Eco Engine</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">Standard</span></div>
+                            <div class="flex justify-between"><span>Attachments</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">Breakers, Tilts, Buckets</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 2 -->
+                <div class="bg-brand-bg rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="h-56 bg-brand-cardAccent relative overflow-hidden flex items-center justify-center transition-colors duration-300">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=600" 
+                             alt="Bulldozer" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-brand-textPrimary transition-colors duration-300">GPS Bulldozers</h3>
+                        <p class="text-xs text-brand-accent font-medium mt-1 mb-4 transition-colors duration-300">CAT D6 / D8 Intelligent Blades</p>
+                        <div class="space-y-2 border-t border-brand-border pt-4 text-xs text-brand-textSecondary transition-colors duration-300">
+                            <div class="flex justify-between"><span>Blade Type</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">6-Way VPAT / Semi-U</span></div>
+                            <div class="flex justify-between"><span>Grade Assist</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">CAT Slope Assist Built-in</span></div>
+                            <div class="flex justify-between"><span>Width</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">Standard & LGP Tracks</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fleet 3 -->
+                <div class="bg-brand-bg rounded-2xl overflow-hidden border border-brand-border group hover:border-brand-accent/30 transition-all duration-300">
+                    <div class="h-56 bg-brand-cardAccent relative overflow-hidden flex items-center justify-center transition-colors duration-300">
+                        <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&q=80&w=600" 
+                             alt="Articulated Dumper" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-brand-textPrimary transition-colors duration-300">Articulated Dump Trucks</h3>
+                        <p class="text-xs text-brand-accent font-medium mt-1 mb-4 transition-colors duration-300">Volvo A25G / Bell B30E (25T - 30T)</p>
+                        <div class="space-y-2 border-t border-brand-border pt-4 text-xs text-brand-textSecondary transition-colors duration-300">
+                            <div class="flex justify-between"><span>Payload Capacity</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">25,000 kg - 28,000 kg</span></div>
+                            <div class="flex justify-between"><span>Drive System</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">6x6 Automatic Diff Locks</span></div>
+                            <div class="flex justify-between"><span>Flotation Tires</span><span class="text-brand-textPrimary font-semibold transition-colors duration-300">Low Ground Pressure</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="services.html#fleet" class="inline-flex items-center text-sm font-semibold text-brand-accent hover:text-brand-textPrimary uppercase tracking-wider transition-colors font-bold">
+                    View Fleet Specifications <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left: Text -->
+            <div class="lg:col-span-5">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">WHY CONTRACT US</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 leading-tight transition-colors duration-300">
+                    Uncompromising Standards in Ground Engineering
+                </h2>
+                <div class="h-1 w-20 bg-brand-accent mb-6 transition-colors duration-300"></div>
+                <p class="text-brand-textSecondary text-base leading-relaxed mb-6 font-light transition-colors duration-300">
+                    Over twenty years, we have built a reputation for excellence. We don't just supply operators and diggers; we provide complete project management solutions designed to de-risk groundworks.
+                </p>
+                <p class="text-brand-textSecondary text-base leading-relaxed mb-8 font-light transition-colors duration-300">
+                    Every project is supported by a comprehensive RAMS package, detailed GPS site mapping, and CPCS certified expertise, ensuring seamless handovers to main structural contractors.
+                </p>
+                <a href="contact.html" class="inline-block bg-brand-accent hover:bg-brand-accentLight text-brand-bg text-xs font-semibold uppercase tracking-wider px-6 py-3.5 rounded-lg transition-colors font-bold shadow-md shadow-brand-accent/10">
+                    Speak with an Engineer
+                </a>
+            </div>
+
+            <!-- Right: Feature Cards Grid -->
+            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-2xl"><i class="fa-solid fa-bolt-lightning"></i></span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-4 mb-2">Fast Response</h3>
+                    <p class="text-brand-textSecondary text-xs leading-relaxed font-light">
+                        Rapid mobilization to site. From quote request to initial survey and machinery drop off, we prioritize rapid execution.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-2xl"><i class="fa-solid fa-users-gear"></i></span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-4 mb-2">Professional Team</h3>
+                    <p class="text-brand-textSecondary text-xs leading-relaxed font-light">
+                        CPCS & CSCS trained supervisors and operators. Certified engineers oversee all structural site leveling and deep drainage runs.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-2xl"><i class="fa-solid fa-compass-drafting"></i></span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-4 mb-2">Modern Equipment</h3>
+                    <p class="text-brand-textSecondary text-xs leading-relaxed font-light">
+                        Premium fleet equipped with GPS machine guidance. In-house diagnostics prevent downtime and secure safety limits.
+                    </p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-2xl"><i class="fa-solid fa-coins"></i></span>
+                    <h3 class="text-lg font-bold text-brand-textPrimary mt-4 mb-2">Competitive Pricing</h3>
+                    <p class="text-brand-gray text-xs leading-relaxed font-light text-brand-textSecondary">
+                        Fully costed estimates with transparent plant, labor, and materials rates. No hidden extras or unexpected cost variations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">TESTIMONIALS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                    What Our Commercial Partners Say
+                </h2>
+                <p class="text-brand-textSecondary font-light transition-colors duration-300">
+                    We work with tier-1 housebuilders, local councils, and private commercial developers across the UK.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 relative flex flex-col justify-between animate-[fadeIn_0.5s_ease-out]">
+                    <div>
+                        <!-- Stars -->
+                        <div class="flex text-brand-accent space-x-1 mb-6 transition-colors duration-300">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-textSecondary text-sm italic leading-relaxed font-light mb-6 transition-colors duration-300">
+                            "DC Earthworks completed the bulk excavation and site clearance package for our Cheshire housing phase on schedule. Their 3D GPS modeling minimized off-site waste disposal fees, saving us tens of thousands in landfill tax. Professional and highly recommended."
+                        </p>
+                    </div>
+                    <div class="border-t border-brand-border pt-6 flex items-center transition-colors duration-300">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent mr-3 transition-colors duration-300">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-textPrimary transition-colors duration-300">Marcus Vance</p>
+                            <p class="text-[10px] text-brand-textSecondary uppercase font-semibold transition-colors duration-300">Commercial Manager, Oakridge Homes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 relative flex flex-col justify-between animate-[fadeIn_0.5s_ease-out]">
+                    <div>
+                        <!-- Stars -->
+                        <div class="flex text-brand-accent space-x-1 mb-6 transition-colors duration-300">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-textSecondary text-sm italic leading-relaxed font-light mb-6 transition-colors duration-300">
+                            "The drainage packages they executed at our logistics terminal bypass project were first-rate. The ground was incredibly challenging, but the engineers managed deep shoring and pipe installation with absolute safety and compliance. A top-tier UK subcontractor."
+                        </p>
+                    </div>
+                    <div class="border-t border-brand-border pt-6 flex items-center transition-colors duration-300">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent mr-3 transition-colors duration-300">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-textPrimary transition-colors duration-300">David Kenning</p>
+                            <p class="text-[10px] text-brand-textSecondary uppercase font-semibold transition-colors duration-300">Project Director, Apex Infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-bg border border-brand-border rounded-2xl p-8 relative flex flex-col justify-between animate-[fadeIn_0.5s_ease-out]">
+                    <div>
+                        <!-- Stars -->
+                        <div class="flex text-brand-accent space-x-1 mb-6 transition-colors duration-300">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-textSecondary text-sm italic leading-relaxed font-light mb-6 transition-colors duration-300">
+                            "We routinely hire operated plant from DC Earthworks. Their operators are highly experienced and their excavators are top-spec, with integrated GPS guidance that allows our site team to feed coordinates directly into the rigs. An invaluable partner."
+                        </p>
+                    </div>
+                    <div class="border-t border-brand-border pt-6 flex items-center transition-colors duration-300">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent mr-3 transition-colors duration-300">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-brand-textPrimary transition-colors duration-300">Sarah Reynolds</p>
+                            <p class="text-[10px] text-brand-textSecondary uppercase font-semibold transition-colors duration-300">Senior Agent, London Enabling Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) SECTION -->
+    <section class="relative py-24 overflow-hidden">
+        <!-- Background Banner -->
+        <div class="absolute inset-0 bg-brand-accent z-0 transition-colors duration-300">
+            <!-- Subtle Grid overlay -->
+            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-accentDark to-brand-accent transition-colors duration-300"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-brand-bg">
+            <span class="text-xs uppercase tracking-widest font-extrabold mb-3 block text-brand-bg/80">READY TO PARTNER?</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-8 max-w-3xl mx-auto leading-tight text-white animate-[fadeIn_0.5s_ease-out]">
+                Need Earthmoving Experts for Your Next Infrastructure Project?
+            </h2>
+            <p class="text-white/80 max-w-2xl mx-auto mb-10 text-base sm:text-lg font-light leading-relaxed">
+                Contact our engineering estimating team today for a comprehensive, costed bill of quantities. We provide rapid mobilization and CPCS expertise nationwide.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contact.html" class="px-8 py-4 bg-brand-bg text-brand-textPrimary hover:bg-brand-bg/90 text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-lg font-bold">
+                    Request a Quote
+                </a>
+                <a href="tel:+441615550192" class="px-8 py-4 bg-transparent border border-white/30 hover:bg-white/10 text-white text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors font-bold">
+                    <i class="fa-solid fa-phone mr-2"></i> +44 (0) 161 555 0192
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0B0C0E] border-t border-brand-border pt-20 pb-10 text-brand-textSecondary text-xs transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Col 1: About Logo -->
+                <div class="lg:col-span-4">
+                    <a href="index.html" class="flex items-center space-x-3 mb-6 group">
+                        <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                            <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-xl tracking-tight text-white block leading-none">DC</span>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                        </div>
+                    </a>
+                    <p class="leading-relaxed mb-6 font-light text-brand-textSecondary pr-6">
+                        DC Earthworks and Groundworks is a premium subcontractor supplying precision civil engineering, plant hire, and bulk earthworks packages to developers across England, Scotland, and Wales.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Services Links -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Services</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="services.html#earthmoving" class="hover:text-brand-accent transition-colors">Bulk Earthmoving</a></li>
+                        <li><a href="services.html#excavation" class="hover:text-brand-accent transition-colors">Excavation & Trenching</a></li>
+                        <li><a href="services.html#groundworks" class="hover:text-brand-accent transition-colors">Deep Drainage & Slabs</a></li>
+                        <li><a href="services.html#plant-hire" class="hover:text-brand-accent transition-colors">Heavy Plant Hire</a></li>
+                        <li><a href="services.html#civil" class="hover:text-brand-accent transition-colors">Civil Engineering</a></li>
+                        <li><a href="services.html#clearance" class="hover:text-brand-accent transition-colors">Remediation & Demolition</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                        <li><a href="services.html#process" class="hover:text-brand-accent transition-colors">Our Process</a></li>
+                        <li><a href="index.html#projects" class="hover:text-brand-accent transition-colors">Featured Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition-colors">Contact Estimating</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Details -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Contact Details</h3>
+                    <ul class="space-y-3 font-light text-brand-textSecondary">
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-phone"></i></span>
+                            <span>+44 (0) 161 555 0192</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-envelope"></i></span>
+                            <span>info@dcearthworks.co.uk</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>
+                                DC Head Office<br>
+                                Sovereign House, Spinners Lane<br>
+                                Manchester, M2 4DF
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-clock"></i></span>
+                            <span>Mon - Fri: 07:00 - 17:30</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Accreditation Logos -->
+            <div class="border-t border-brand-border py-8 flex flex-wrap justify-between items-center gap-6 transition-colors duration-300">
+                <div class="flex flex-wrap items-center gap-6">
+                    <span class="font-semibold uppercase tracking-wider text-[10px] text-brand-textSecondary">Accredited by:</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">CHAS Premium</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">SMAS Worksafe</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">ISO 9001</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">Constructionline Gold</span>
+                </div>
+                <div class="text-[10px] text-brand-textSecondary font-light">
+                    © 2026 DC Earthworks & Groundworks Ltd. All Rights Reserved. Co No: 09283748. VAT No: GB827381920.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+        // Sticky Header shrink on scroll
+        const header = document.getElementById('sticky-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-xl', 'bg-brand-bg');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow-xl', 'bg-brand-bg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < revealElements.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = revealElements[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Portfolio Filtering (Vanilla JS)
+        const filterBtns = document.querySelectorAll('#project-filters button');
+        const projectItems = document.querySelectorAll('#project-grid .project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-accent', 'text-brand-bg');
+                    b.classList.add('bg-brand-card', 'hover:bg-brand-cardAccent', 'text-brand-textSecondary', 'hover:text-brand-textPrimary');
+                });
+                
+                btn.classList.add('bg-brand-accent', 'text-brand-bg');
+                btn.classList.remove('bg-brand-card', 'hover:bg-brand-cardAccent', 'text-brand-textSecondary', 'hover:text-brand-textPrimary');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Stats Counters Animation
+        const animateCounters = () => {
+            const countYears = document.getElementById('counter-years');
+            const countProj = document.getElementById('counter-projects');
+            
+            let years = 0;
+            let projects = 0;
+            
+            const timerY = setInterval(() => {
+                if (years < 20) {
+                    years++;
+                    countYears.innerText = years + '+';
+                } else {
+                    clearInterval(timerY);
+                }
+            }, 50);
+
+            const timerP = setInterval(() => {
+                if (projects < 500) {
+                    projects += 10;
+                    countProj.innerText = projects + '+';
+                } else {
+                    countProj.innerText = '500+';
+                    clearInterval(timerP);
+                }
+            }, 20);
+        }
+
+        let counterTriggered = false;
+        const checkCounterScroll = () => {
+            const counterSection = document.getElementById('counter-years');
+            if (!counterSection) return;
+            const top = counterSection.getBoundingClientRect().top;
+            if (top < window.innerHeight && !counterTriggered) {
+                animateCounters();
+                counterTriggered = true;
+            }
+        }
+        window.addEventListener('scroll', checkCounterScroll);
+        window.addEventListener('load', checkCounterScroll);
+
+        // ============================================================
+        // DESIGN STYLE SWITCHER — 4 Themes
+        // ============================================================
+        const themeToast = document.getElementById('theme-toast');
+        const toastMessage = document.getElementById('toast-message');
+
+        const showToast = (message) => {
+            toastMessage.innerText = message;
+            themeToast.classList.remove('opacity-0', 'scale-95');
+            themeToast.classList.add('opacity-100', 'scale-100');
+            setTimeout(() => {
+                themeToast.classList.remove('opacity-100', 'scale-100');
+                themeToast.classList.add('opacity-0', 'scale-95');
+            }, 2800);
+        };
+
+        const themeConfig = {
+            'theme-dark':       { btnId: 'btn-theme-dark',       activeClass: 'active-industrial', label: 'Heavy Industrial Dark' },
+            'theme-light':      { btnId: 'btn-theme-light',      activeClass: 'active-light',       label: 'Architectural Bronze' },
+            'theme-minimalist': { btnId: 'btn-theme-minimalist', activeClass: 'active-minimal',     label: 'Steel Minimalist' },
+            'theme-glass':      { btnId: 'btn-theme-glass',      activeClass: 'active-glass',       label: 'Glassmorphism' },
+            'theme-brutal':     { btnId: 'btn-theme-brutal',     activeClass: 'active-brutal',      label: 'Brutal Minimalist' },
+        };
+
+        const updateSwitcherButtons = (activeTheme) => {
+            // Reset all buttons
+            Object.values(themeConfig).forEach(cfg => {
+                const btn = document.getElementById(cfg.btnId);
+                if (!btn) return;
+                btn.classList.remove('active', 'active-industrial', 'active-light', 'active-minimal', 'active-glass');
+            });
+
+            // Activate selected
+            const cfg = themeConfig[activeTheme];
+            if (cfg) {
+                const btn = document.getElementById(cfg.btnId);
+                if (btn) btn.classList.add('active', cfg.activeClass);
+            }
+        };
+
+        window.setTheme = (themeName) => {
+            // Remove all theme classes
+            document.body.classList.remove('theme-light', 'theme-minimalist', 'theme-glass', 'theme-brutal');
+            if (themeName !== 'theme-dark') {
+                document.body.classList.add(themeName);
+            }
+
+            // Handle glassmorphism orb layer & html background
+            const orbLayer = document.getElementById('glass-orb-layer');
+            if (themeName === 'theme-glass') {
+                if (orbLayer) orbLayer.style.display = 'block';
+                document.documentElement.style.background = 'linear-gradient(135deg, #0f0c29 0%, #1a0533 25%, #1b1464 50%, #0d1b4b 75%, #0f0c29 100%)';
+                document.documentElement.style.minHeight = '100vh';
+                document.documentElement.style.backgroundAttachment = 'fixed';
+            } else {
+                if (orbLayer) orbLayer.style.display = 'none';
+                document.documentElement.style.background = '';
+                document.documentElement.style.minHeight = '';
+                document.documentElement.style.backgroundAttachment = '';
+            }
+
+            localStorage.setItem('site-theme', themeName);
+            updateSwitcherButtons(themeName);
+
+            const cfg = themeConfig[themeName];
+            const displayName = cfg ? cfg.label : 'Industrial Dark';
+            showToast('✦  ' + displayName);
+        };
+
+        // Apply saved or default theme on load
+        const savedTheme = localStorage.getItem('site-theme') || 'theme-dark';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

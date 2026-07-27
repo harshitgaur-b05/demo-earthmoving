@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | DC Earthworks & Groundworks</title>
+    <meta name="description" content="Explore our specialized ground engineering services across the UK. Bulk earthmoving, excavation, drainage, plant hire, and civil engineering.">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'var(--color-bg)',
+                            bgDark: 'var(--color-bg-dark)',
+                            card: 'var(--color-card)',
+                            cardAccent: 'var(--color-card-accent)',
+                            border: 'var(--color-border)',
+                            accent: 'var(--color-accent)',
+                            accentLight: 'var(--color-accent-light)',
+                            accentDark: 'var(--color-accent-dark)',
+                            textPrimary: 'var(--color-text-primary)',
+                            textSecondary: 'var(--color-text-secondary)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-bg: #0E0F11;
+            --color-bg-dark: #0B0C0E;
+            --color-card: #16181B;
+            --color-card-accent: #23262B;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-accent: #D99C00;
+            --color-accent-light: #F5B50A;
+            --color-accent-dark: #B07E00;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #8E919A;
+        }
+        
+        .theme-light {
+            --color-bg: #F8FAFC;
+            --color-bg-dark: #F1F5F9;
+            --color-card: #FFFFFF;
+            --color-card-accent: #E2E8F0;
+            --color-border: rgba(15, 23, 42, 0.08);
+            --color-accent: #854D0E;
+            --color-accent-light: #A16207;
+            --color-accent-dark: #713F12;
+            --color-text-primary: #0F172A;
+            --color-text-secondary: #475569;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-textPrimary font-sans antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- FLOATING STYLE SWITCHER -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button id="theme-toggle-btn" class="flex items-center space-x-2 bg-brand-card/90 backdrop-blur-md border border-brand-border px-4 py-3.5 rounded-full shadow-2xl text-xs font-semibold uppercase tracking-wider text-brand-textPrimary hover:border-brand-accent transition-all duration-300 group">
+            <i class="fa-solid fa-paint-roller text-brand-accent transform group-hover:rotate-12 transition-transform duration-300"></i>
+            <span>Switch Design Style</span>
+        </button>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="theme-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 bg-brand-card border border-brand-border px-5 py-3.5 rounded-xl shadow-2xl text-xs font-medium text-brand-textPrimary transition-all duration-500 flex items-center space-x-3">
+        <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+        <span id="toast-message">Style changed successfully.</span>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="bg-brand-bgDark border-b border-brand-border py-2 px-4 text-xs text-brand-textSecondary hidden lg:block transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-phone text-brand-accent mr-2"></i> +44 (0) 161 555 0192</span>
+                <span><i class="fa-solid fa-envelope text-brand-accent mr-2"></i> info@dcearthworks.co.uk</span>
+                <span><i class="fa-solid fa-location-dot text-brand-accent mr-2"></i> Manchester & London Depots</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CHAS Premium</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">FORS Gold</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CPA Member</span>
+                <span class="text-brand-textPrimary/80 font-semibold uppercase tracking-wider text-[10px] bg-brand-card-accent px-2 py-0.5 rounded border border-brand-border transition-colors duration-300">CITB Registered</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / STICKY NAVIGATION -->
+    <header id="sticky-header" class="sticky top-0 z-40 transition-all duration-300 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="relative w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                        <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-brand-textPrimary block leading-none transition-colors duration-300">DC</span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-accent rounded-full"></span>
+                    </a>
+                    <a href="services.html#process" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Process
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#projects" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-brand-textPrimary hover:text-brand-accent font-medium text-sm transition-colors duration-200 relative py-2 group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Right Action Button -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="contact.html" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xs font-semibold uppercase tracking-wider rounded-lg group bg-gradient-to-br from-brand-accent to-brand-accentDark text-brand-bg focus:ring-4 focus:outline-none focus:ring-yellow-800 transition-all duration-300">
+                        <span class="relative px-5 py-3 transition-all ease-in duration-75 bg-brand-accent rounded-md group-hover:bg-opacity-0 group-hover:text-brand-textPrimary font-bold">
+                            Get a Free Quote <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-brand-textSecondary hover:text-brand-textPrimary focus:outline-none" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-b border-brand-border px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+            <a href="index.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Home</a>
+            <a href="services.html" class="block text-brand-accent font-medium text-base py-2 border-b border-brand-border">Services</a>
+            <a href="services.html#process" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Process</a>
+            <a href="index.html#projects" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Projects</a>
+            <a href="contact.html" class="block text-brand-textPrimary hover:text-brand-accent font-medium text-base py-2 border-b border-brand-border">Contact</a>
+            <div class="pt-4">
+                <a href="contact.html" class="w-full text-center block bg-brand-accent text-brand-bg hover:bg-brand-accentLight font-semibold uppercase tracking-wider text-xs py-4 rounded-lg transition-colors">
+                    Get a Free Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- INNER PAGE HERO -->
+    <section class="relative py-28 bg-brand-card overflow-hidden border-b border-brand-border transition-colors duration-300">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">WHAT WE DO</span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                Specialist Contracting Services
+            </h1>
+            <p class="text-brand-textSecondary max-w-2xl mx-auto text-base sm:text-lg font-light leading-relaxed transition-colors duration-300">
+                From bulk earthworks to foundation preparation and infrastructure installation. DC Earthworks provides complete enabling packages for developers nationwide.
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 1: EARTHMOVING -->
+    <section id="earthmoving" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&q=80&w=800" 
+                         alt="Bulk Earthmoving" 
+                         class="w-full h-[400px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 01</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Bulk Earthmoving & Land Modeling</h2>
+                <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                    We specialize in bulk muck away, site leveling, cut-and-fill calculations, and material import/export. Utilizing advanced GPS-guided machinery, we execute accurate topsoil strips and subsoil cut-and-fills to ensure exact structural coordinates.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> 3D GPS Cut & Fill calculations</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Bulk material disposal & recycling</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Land remediation & capping</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Clay liner installations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 2: EXCAVATION -->
+    <section id="excavation" class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-7 order-2 lg:order-1">
+                    <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 02</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Precision Excavation & Trenching</h2>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Our excavators and operators carry out foundation footing trenches, basement digs, retaining walls, attenuation tanks, and water management lagoons. We ensure precise depth profiles in compliance with local structural engineering plans and building regulations.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Strip foundation trenching</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Complex basement excavations</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Retaining wall preparations</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Deep utility service trenches</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 order-1 lg:order-2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800" 
+                             alt="Excavation" 
+                             class="w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 3: GROUNDWORKS -->
+    <section id="groundworks" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&q=80&w=800" 
+                         alt="Groundworks" 
+                         class="w-full h-[400px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 03</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Groundworks & Foundations</h2>
+                <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                    From sub-structure blocks and floor slabs to drainage networks and road access construction. We lay the foundations of residential, commercial, and industrial sites. Our capabilities include deep sewers, manhole construction, and attenuation systems.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Ring beam & raft foundations</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Concrete slab installations</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Deep adoptable drainage (S104)</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Access road substructures</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 4: PLANT HIRE -->
+    <section id="plant-hire" class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-7 order-2 lg:order-1">
+                    <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 04</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Heavy Plant Hire (Operated & Self-Drive)</h2>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        Our modern plant fleet is available for hire on competitive terms. All machines are loaded with Tier 4/V environmentally certified engines and are maintained to standard. Operated hire includes experienced, CPCS-qualified, and safety-audited drivers.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Tracked Excavators (1.5T to 35T)</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> GPS Intelligent Bulldozers</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Dumpers & Rollers</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Full attachment options available</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 order-1 lg:order-2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                        <img src="https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&q=80&w=800" 
+                             alt="Plant Hire" 
+                             class="w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 5: CIVIL ENGINEERING -->
+    <section id="civil" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" 
+                         alt="Civil Engineering" 
+                         class="w-full h-[400px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 05</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Civil Engineering & Infrastructure</h2>
+                <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                    We provide highway infrastructure works, utilities corridors, deep drainage connections, culverts, and slope-stabilization/retaining systems. Our engineers work in close partnership with structural consultants to deliver durable infrastructure solutions.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Section 278 Highway Works</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Retaining structure systems</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Precast concrete structural elements</div>
+                    <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Utility installation packages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE SECTION 6: SITE CLEARANCE -->
+    <section id="clearance" class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-7 order-2 lg:order-1">
+                    <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-2 block transition-colors duration-300">SERVICE 06</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-textPrimary mb-6 transition-colors duration-300">Site Clearance & Soil Remediation</h2>
+                    <p class="text-brand-textSecondary text-sm leading-relaxed mb-6 font-light transition-colors duration-300">
+                        We prepare greenfield and brownfield sites for construction. Demolition of existing structures, vegetation removal, soil stabilization, and sorting/capping of hazardous materials. We aim to maximize site recycling to prevent high off-site disposal fees.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-brand-textPrimary/90">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Demolition of masonry structures</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Soil stabilization & lime conditioning</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Waste classification & segregation</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-accent mr-3 transition-colors duration-300"></i> Crushing & screening of concrete</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 order-1 lg:order-2">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" 
+                             alt="Site Clearance" 
+                             class="w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/85 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: OUR PROCESS -->
+    <section id="process" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">METHODOLOGY</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                Our Structured Contracting Process
+            </h2>
+            <p class="text-brand-textSecondary font-light transition-colors duration-300">
+                We follow a rigorous management system to ensure your site is delivered on schedule, fully compliant, and ready for structure handovers.
+            </p>
+        </div>
+
+        <!-- Process Timeline Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <!-- Connecting Line for Desktop -->
+            <div class="absolute top-[45px] left-[10%] right-[10%] h-[2px] bg-brand-cardAccent hidden md:block z-0 transition-colors duration-300"></div>
+
+            <!-- Step 1 -->
+            <div class="relative z-10 flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-brand-bg border-2 border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent font-bold text-xl mb-6 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                    01
+                </div>
+                <h3 class="text-lg font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors">Consultation</h3>
+                <p class="text-brand-textSecondary text-xs leading-relaxed font-light px-2">
+                    Initial review of your structural drawings, site plans, site topography reports, and soil tests.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative z-10 flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-brand-bg border-2 border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent font-bold text-xl mb-6 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                    02
+                </div>
+                <h3 class="text-lg font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors">Planning</h3>
+                <p class="text-brand-textSecondary text-xs leading-relaxed font-light px-2">
+                    Preparing 3D cut-and-fill GPS models, producing complete RAMS packs, scheduling mobilization, and signing service SLAs.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative z-10 flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-brand-bg border-2 border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent font-bold text-xl mb-6 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                    03
+                </div>
+                <h3 class="text-lg font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors">Execution</h3>
+                <p class="text-brand-textSecondary text-xs leading-relaxed font-light px-2">
+                    Deploying Stage V machinery and qualified CPCS drivers. Site grading and drainage runs managed under engineer supervision.
+                </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative z-10 flex flex-col items-center text-center group">
+                <div class="w-20 h-20 bg-brand-bg border-2 border-brand-accent/30 rounded-2xl flex items-center justify-center text-brand-accent font-bold text-xl mb-6 group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all duration-300">
+                    04
+                </div>
+                <h3 class="text-lg font-bold text-brand-textPrimary mb-3 group-hover:text-brand-accent transition-colors">Completion</h3>
+                <p class="text-brand-textSecondary text-xs leading-relaxed font-light px-2">
+                    Final topographic inspections, client walkovers, handover of s104 adoptable documentation, and site demobilization.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SECTORS SERVED -->
+    <section class="py-24 bg-brand-card border-y border-brand-border reveal transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-brand-accent font-extrabold mb-3 block transition-colors duration-300">SECTORS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-textPrimary mb-6 transition-colors duration-300">
+                    Industries We Serve Across the UK
+                </h2>
+                <p class="text-brand-textSecondary font-light transition-colors duration-300">
+                    We adapt our civil engineering and plant capabilities to match the standards of diverse building environments.
+                </p>
+            </div>
+
+            <!-- Sectors Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Sector 1 -->
+                <div class="bg-brand-bg p-8 rounded-2xl border border-brand-border hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-3xl"><i class="fa-solid fa-house-chimney"></i></span>
+                    <h3 class="text-base font-bold text-brand-textPrimary mt-4 mb-2">Residential housing</h3>
+                    <p class="text-brand-textSecondary text-[11px] leading-relaxed font-light">
+                        Civil packages, adoptable roads, footings, and deep sewers for small and large-scale residential developments.
+                    </p>
+                </div>
+                <!-- Sector 2 -->
+                <div class="bg-brand-bg p-8 rounded-2xl border border-brand-border hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-3xl"><i class="fa-solid fa-city"></i></span>
+                    <h3 class="text-base font-bold text-brand-textPrimary mt-4 mb-2">Commercial Buildings</h3>
+                    <p class="text-brand-textSecondary text-[11px] leading-relaxed font-light">
+                        Mass basement works, car parks, structural piling prep, and utility hubs for retail parks, offices, and warehouses.
+                    </p>
+                </div>
+                <!-- Sector 3 -->
+                <div class="bg-brand-bg p-8 rounded-2xl border border-brand-border hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-3xl"><i class="fa-solid fa-network-wired"></i></span>
+                    <h3 class="text-base font-bold text-brand-textPrimary mt-4 mb-2">Public Infrastructure</h3>
+                    <p class="text-brand-textSecondary text-[11px] leading-relaxed font-light">
+                        Bulk earthmoving and drainage configurations for schools, bypass bypass links, highways, and community schemes.
+                    </p>
+                </div>
+                <!-- Sector 4 -->
+                <div class="bg-brand-bg p-8 rounded-2xl border border-brand-border hover:border-brand-accent/20 transition-all duration-300">
+                    <span class="text-brand-accent text-3xl"><i class="fa-solid fa-solar-panel"></i></span>
+                    <h3 class="text-base font-bold text-brand-textPrimary mt-4 mb-2">Energy & Renewables</h3>
+                    <p class="text-brand-textSecondary text-[11px] leading-relaxed font-light">
+                        Ground preparation for wind farms, substations, and solar array foundations including access roads.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (CTA) SECTION -->
+    <section class="relative py-24 overflow-hidden">
+        <!-- Background Banner -->
+        <div class="absolute inset-0 bg-brand-accent z-0 transition-colors duration-300">
+            <!-- Subtle Grid overlay -->
+            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-accentDark to-brand-accent transition-colors duration-300"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-brand-bg">
+            <span class="text-xs uppercase tracking-widest font-extrabold mb-3 block text-brand-bg/80">READY TO PARTNER?</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-8 max-w-3xl mx-auto leading-tight text-white">
+                Need Earthmoving Experts for Your Next Infrastructure Project?
+            </h2>
+            <p class="text-white/80 max-w-2xl mx-auto mb-10 text-base sm:text-lg font-light leading-relaxed">
+                Contact our engineering estimating team today for a comprehensive, costed bill of quantities. We provide rapid mobilization and CPCS expertise nationwide.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contact.html" class="px-8 py-4 bg-brand-bg text-brand-textPrimary hover:bg-brand-bg/90 text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-lg font-bold">
+                    Request a Quote
+                </a>
+                <a href="tel:+441615550192" class="px-8 py-4 bg-transparent border border-white/30 hover:bg-white/10 text-white text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors">
+                    <i class="fa-solid fa-phone mr-2"></i> +44 (0) 161 555 0192
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0B0C0E] border-t border-brand-border pt-20 pb-10 text-brand-textSecondary text-xs transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Col 1: About Logo -->
+                <div class="lg:col-span-4">
+                    <a href="index.html" class="flex items-center space-x-3 mb-6 group">
+                        <div class="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center overflow-hidden transition-colors duration-300">
+                            <i class="fa-solid fa-helmet-safety text-brand-bg text-xl transform group-hover:scale-110 transition-all duration-300"></i>
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-xl tracking-tight text-white block leading-none">DC</span>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-accent font-semibold transition-colors duration-300">EARTHWORKS</span>
+                        </div>
+                    </a>
+                    <p class="leading-relaxed mb-6 font-light text-brand-textSecondary pr-6">
+                        DC Earthworks and Groundworks is a premium subcontractor supplying precision civil engineering, plant hire, and bulk earthworks packages to developers across England, Scotland, and Wales.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-twitter text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-brand-accent hover:text-brand-bg flex items-center justify-center text-brand-textPrimary transition-all duration-300 border border-brand-border"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Services Links -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Services</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="services.html#earthmoving" class="hover:text-brand-accent transition-colors">Bulk Earthmoving</a></li>
+                        <li><a href="services.html#excavation" class="hover:text-brand-accent transition-colors">Excavation & Trenching</a></li>
+                        <li><a href="services.html#groundworks" class="hover:text-brand-accent transition-colors">Deep Drainage & Slabs</a></li>
+                        <li><a href="services.html#plant-hire" class="hover:text-brand-accent transition-colors">Heavy Plant Hire</a></li>
+                        <li><a href="services.html#civil" class="hover:text-brand-accent transition-colors">Civil Engineering</a></li>
+                        <li><a href="services.html#clearance" class="hover:text-brand-accent transition-colors">Remediation & Demolition</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-brand-accent transition-colors">Our Services</a></li>
+                        <li><a href="services.html#process" class="hover:text-brand-accent transition-colors">Our Process</a></li>
+                        <li><a href="index.html#projects" class="hover:text-brand-accent transition-colors">Featured Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition-colors">Contact Estimating</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Details -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-sm font-bold text-white mb-6 uppercase tracking-wider">Contact Details</h3>
+                    <ul class="space-y-3 font-light text-brand-textSecondary">
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-phone"></i></span>
+                            <span>+44 (0) 161 555 0192</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-envelope"></i></span>
+                            <span>info@dcearthworks.co.uk</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-location-dot"></i></span>
+                            <span>
+                                DC Head Office<br>
+                                Sovereign House, Spinners Lane<br>
+                                Manchester, M2 4DF
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent mr-3"><i class="fa-solid fa-clock"></i></span>
+                            <span>Mon - Fri: 07:00 - 17:30</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Accreditation Logos -->
+            <div class="border-t border-brand-border py-8 flex flex-wrap justify-between items-center gap-6 transition-colors duration-300">
+                <div class="flex flex-wrap items-center gap-6">
+                    <span class="font-semibold uppercase tracking-wider text-[10px] text-brand-textSecondary">Accredited by:</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">CHAS Premium</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">SMAS Worksafe</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">ISO 9001</span>
+                    <span class="text-white/60 font-bold uppercase tracking-wider text-xs border border-brand-border px-3 py-1 bg-brand-card rounded transition-colors duration-300">Constructionline Gold</span>
+                </div>
+                <div class="text-[10px] text-brand-textSecondary font-light">
+                    © 2026 DC Earthworks & Groundworks Ltd. All Rights Reserved. Co No: 09283748. VAT No: GB827381920.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+        // Sticky Header shrink on scroll
+        const header = document.getElementById('sticky-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-xl', 'bg-brand-bg');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow-xl', 'bg-brand-bg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < revealElements.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = revealElements[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('active');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // DESIGN STYLE SWITCHER & PERSISTENCE
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToast = document.getElementById('theme-toast');
+        const toastMessage = document.getElementById('toast-message');
+
+        const savedTheme = localStorage.getItem('site-theme') || 'theme-dark';
+        if (savedTheme === 'theme-light') {
+            document.body.classList.add('theme-light');
+            themeToggleBtn.querySelector('span').innerText = 'Style: Architectural Light';
+        } else {
+            document.body.classList.remove('theme-light');
+            themeToggleBtn.querySelector('span').innerText = 'Style: Industrial Dark';
+        }
+
+        const showToast = (message) => {
+            toastMessage.innerText = message;
+            themeToast.classList.remove('translate-y-20', 'opacity-0');
+            themeToast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                themeToast.classList.remove('translate-y-0', 'opacity-100');
+                themeToast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('theme-light');
+            const newTheme = isLight ? 'theme-light' : 'theme-dark';
+            localStorage.setItem('site-theme', newTheme);
+            
+            if (isLight) {
+                themeToggleBtn.querySelector('span').innerText = 'Style: Architectural Light';
+                showToast('Aesthetic changed to Architectural Bronze Light');
+            } else {
+                themeToggleBtn.querySelector('span').innerText = 'Style: Industrial Dark';
+                showToast('Aesthetic changed to Heavy Industrial Dark');
+            }
+        });
+    </script>
+</body>
+</html>
